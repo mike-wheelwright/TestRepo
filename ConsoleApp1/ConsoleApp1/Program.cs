@@ -10,6 +10,11 @@ namespace Mainline
     {
         static void Main(string[] args)
         {
+            Car myCar = new Car();
+
+            myCar.Ride();
+
+            Console.ReadKey();
         }
     }
 }
