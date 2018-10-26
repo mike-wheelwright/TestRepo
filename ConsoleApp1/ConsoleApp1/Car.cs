@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mainline
 {
-    class Car : Vehicle
+    class Car : Vehicle, ISteerable
     {
         private string color;
 
@@ -18,6 +18,6 @@ namespace Mainline
 
         public override void Ride() => Console.WriteLine("wrooom!");
 
-
+        public void Steer() => Console.WriteLine("turn right");
     }
 }

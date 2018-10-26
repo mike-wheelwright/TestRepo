@@ -14,6 +14,77 @@ namespace Mainline
 
             myCar.Ride();
 
+            int friday = (int)Enums.Days.Friday;
+
+            Console.WriteLine(friday);
+            Console.WriteLine(friday.GetType());
+
+            int[] table = { 1, 2, 3, 4 };
+
+            List<Car> myList = new List<Car>();
+
+            foreach(int el in table)
+            {
+                myList.Add(new Car("white"));
+            }
+
+
+            foreach(Car obj in myList)
+            {
+                Console.WriteLine(value: obj.Color);
+            }
+         
+
+            Console.WriteLine(table[1]);
+
+            Console.WriteLine(Array.BinarySearch(table, 2));
+
+            var newList = new List<ISteerable>();
+            
+
+            bool IsAnagram(string word)
+            {
+                char[] invertedWord = word.ToCharArray();
+                
+                Array.Reverse(invertedWord);
+
+                string invertedString = new string(invertedWord);
+             
+                if(string.Equals(word, invertedString))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+
+            Console.WriteLine(IsAnagram("aoa"));
+
+
+            // Exceptions //
+
+
+            try
+            {
+                int[] myTab = new int[2];
+                myTab[0] = 1;
+                myTab[1] = 2;
+                int element = myTab[10];
+            }
+            catch(IndexOutOfRangeException exception)
+            {
+                Console.WriteLine("Error: " + exception.Message);
+            }
+            catch(Exception exception)
+            {
+                Console.WriteLine("Another error: " + exception );
+            }
+
+
+
             Console.ReadKey();
         }
     }
