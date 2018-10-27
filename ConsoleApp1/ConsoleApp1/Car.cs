@@ -12,9 +12,15 @@ namespace Mainline
 
         public string Color { get; set; }
 
-        public Car(string color) => Color = color;
+        private static int count = 0;
 
-        public Car() { }
+        public Car(string color)
+        {
+            Color = color;
+            count++;
+        }
+
+        public Car() => count++;
 
         public override void Ride() => Console.WriteLine("wrooom!");
 

@@ -14,14 +14,14 @@ namespace Mainline
 
             myCar.Ride();
 
-            int friday = (int)Enums.Days.Friday;
+            var friday = Enums.Days.Friday;
 
             Console.WriteLine(friday);
             Console.WriteLine(friday.GetType());
 
             int[] table = { 1, 2, 3, 4 };
 
-            List<Car> myList = new List<Car>();
+            var myList = new List<Car>();
 
             foreach(int el in table)
             {
@@ -33,7 +33,15 @@ namespace Mainline
             {
                 Console.WriteLine(value: obj.Color);
             }
-         
+
+
+            // LINQ query returning from myList all Car objects
+            // with "white" as color value;
+            var whiteCars = from car in myList
+                            where car.Color == "white"
+                            select car;
+
+
 
             Console.WriteLine(table[1]);
 
